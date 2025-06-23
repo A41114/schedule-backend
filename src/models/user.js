@@ -11,12 +11,20 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      User.hasMany(models.Chatbox, { as: 'customerChats', foreignKey: 'customer_id' });
+      User.hasMany(models.Chatbox, { as: 'adminChats', foreignKey: 'admin_id' });
+      User.hasMany(models.Message, { foreignKey: 'sender_id' });
     }
-  };
+  }
   User.init({
-    firstName: DataTypes.STRING,
-    lastName: DataTypes.STRING,
-    email: DataTypes.STRING
+    email: DataTypes.STRING,
+    fullName: DataTypes.STRING,
+    password: DataTypes.STRING,
+    address: DataTypes.STRING,
+    phoneNumber: DataTypes.STRING,
+    gender: DataTypes.STRING,
+    roleId: DataTypes.STRING,
+
   }, {
     sequelize,
     modelName: 'User',
