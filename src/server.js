@@ -92,7 +92,7 @@ async function verifyGoogleToken(token) {
   };
 }
 
-// Route xử lý đăng nhập
+// Route xử lý đăng nhập bằng google
 app.post("/api/auth/google", async (req, res) => {
   const { token } = req.body;
 
@@ -184,6 +184,23 @@ io.on('connection', (socket) => {
   });
 });
 
+// const allowedOrigins = [
+//   'http://localhost:3000',
+//   'https://schedule-frontend-five.vercel.app'
+// ];
+// app.use(cors({
+//   origin: function (origin, callback) {
+//     if (!origin || allowedOrigins.includes(origin)) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error('Not allowed by CORS'));
+//     }
+//   },
+//   credentials: true,
+// }));
+app.use(cors({
+  origin: '*',
+}));
 const PORT = 8080;
 server.listen(PORT, () => {
   console.log(`🚀 Server listening on http://localhost:${PORT}`);
