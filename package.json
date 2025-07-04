@@ -35,7 +35,7 @@
     "nodemailer": "^7.0.3",
     "passport": "^0.7.0",
     "passport-google-oauth20": "^2.0.0",
-    "playwright": "^1.25.2",
+    "playwright": "^1.44.0",
     "puppeteer": "^11.0.0",
     "selenium-webdriver": "^4.30.0",
     "sequelize": "^6.37.7",
