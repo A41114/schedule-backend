@@ -17,7 +17,7 @@ let getAboutme = (req,res) =>{
 }
 let getAuctionAnnouncement=(async(req,res)=>{
     try {
-        // console.log(req.body)
+        console.log('getAuctionAnnouncement body',req.body)
         let data = await userService.getAuctionAnnouncementService(req.body)
         // console.log('req.header: ',req.header)
         // console.log('Controller run !!!',data)
